@@ -1,0 +1,715 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://app.ttcdn.co/theme_assets/sodermalm/main.css?2017-06-14T13:28:10.132Z" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/loogart/kalooba/master/img/apple-icon.png" />
+    <title>
+        {{store_name}} {{#list_page}}{{#navigation}}{{#is_current}}- {{label}}{{/is_current}}{{/navigation}}{{/list_page}} {{#product_page}}{{#product}}- {{title}}{{/product}}{{/product_page}} {{#about_page}}- {{#lang}}About{{/lang}}{{/about_page}} {{#b2b_page}}- {{#lang}}B2B{{/lang}}{{/b2b_page}}
+    </title>
+    <style>
+        /*
+      **************************************
+      * Theme customizations
+      *
+      * You can change the sections below to easily make
+      * changes to your theme
+      **************************************
+      */
+        /*
+       * Change the value (120%) if don't have an aspect ratio of 5:6 for your images
+       * Aspect ratio 2:1  = 50%
+       * Aspect ratio 16:9 = 56.25%
+       * Aspect ratio 4:3  = 75%
+       * Aspect ratio 1:1  = 100%
+       * Aspect ratio 5:6  = 120%
+       * Aspect ratio 9:6  = 150%
+       * Aspect ratio 1:2  = 200%
+      */
+        
+        .Product-Image-Aspect-Ratio {
+            padding-bottom: 120%;
+        }
+        
+        img.ProductImage__image:hover {
+            transform: translateY(-2px);
+        }
+        /*
+       * Edit this value to change the background color of your shop
+      */
+        
+        .Background-Color {
+            background: white;
+        }
+        /*
+       * Edit these values to change the colors for your "Add to cart"
+       * button on your product page
+      */
+        
+        .Add-To-Cart-Button-Color {
+            background: #000000;
+            color: #FFFFFF;
+        }
+        /*
+       * Change this from 'display: block' to 'display: none' to remove
+       * the Facebook, Pinterest, Twitter and embed buttons on your product page
+      */
+        
+        .Display-Social-Buttons-On-Product-Page {
+            display: block;
+        }
+        /*
+       * Edit the pixels values to make your logotype in the header smaller or larger
+      */
+        
+        .Logotype-Size {
+            max-height: 60px;
+            max-width: 180px;
+        }
+        /*
+       * Edit the value (16px) below to make the navigation text smaller or larger
+      */
+        
+        .Navigation-Font-Size {
+            font-size: 24px;
+            font-weight: bolder;
+        }
+        
+        .Page-navigation__item a {
+            color: #000;
+        }
+        
+        .Page-navigation__item--selected:not(.Page-navigation__item--child-active)>a {
+            color: #b7b7b7;
+            font-weight: bolder;
+            text-decoration: line-through;
+        }
+        
+        .Page-sub-navigation__item a {
+            font-size: 1.2rem;
+            font-weight: normal;
+            color: #000;
+        }
+        
+        .Page-sub-navigation__item--selected a {
+            color: #b7b7b7;
+            font-weight: normal;
+            text-decoration: line-through;
+        }
+        /*
+       * Edit the value (#8A8A8A) below to change the color of the navigation text
+      */
+        
+        .Navigation-Color {
+            color: ;
+            #222;
+        }
+        
+        .Mobile-navigation__button {
+            color: #222;
+            font-weight: bold;
+        }
+        /* Loogart styles */
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            animation: fadein 1s;
+            -moz-animation: fadein 1s;
+            -webkit-animation: fadein 1s;
+            -o-animation: fadein 1s;
+        }
+        
+        @keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @-moz-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @-webkit-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @-o-keyframes fadein {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .jumbo-1 {
+            display: -webkit-flex;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        
+        .jumbo-1 img.main {
+            object-fit: cover;
+            object-position: 50% 25%;
+            width: 100%;
+            position: relative;
+            filter: brightness(0.9);
+            height: 40vh;
+        }
+        
+        .jumbo-1 .text {
+            color: #fff;
+            position: absolute;
+            padding: 2rem 3.6rem;
+            max-width: 100%;
+            z-index: 1;
+        }
+        
+        .jumbo-1 h1 {
+            font-size: 3.6rem;
+            font-weight: bolder;
+            margin-bottom: 0;
+        }
+        
+        .jumbo-1 p {
+            font-size: 1.5rem;
+            line-height: 1.7rem;
+        }
+        
+        .jumbo-1 a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .jumbo-2 img.main {
+            object-fit: cover;
+            object-position: 50% 20%;
+            width: 100%;
+            position: relative;
+            filter: brightness(0.9);
+            height: 10vh;
+        }
+        
+        @media (max-width:767px) {
+            .jumbo-1 {
+                display: none;
+            }
+            .jumbo-inside {
+                display: block;
+            }
+        }
+        
+        @media (min-width:768px) {
+            .Page-sub-navigation {
+                margin-top: 20px;
+            }
+            .jumbo-inside {
+                display: none;
+            }
+        }
+        
+        .ProductCell__title {
+            color: #222;
+            font-weight: normal;
+        }
+        
+        .ProductCell__price {
+            color: #000;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+        
+        .ProductCell__price .currency {
+            font-size: .8rem;
+        }
+        
+        p.Product__price {
+            font-size: 2.4rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        
+        p.Product__price .currency {
+            font-size: 1rem;
+            margin-left: .1rem;
+        }
+        
+        .Product__price--out-of-stock,
+        .ProductCell__price--out-of-stock {
+            color: #ccc;
+            text-decoration: line-through;
+        }
+        
+        .About__container {
+            display: inline-block;
+        }
+        
+        .About__container h2 {
+            font-size: 2.4rem;
+            line-height: 2.3rem;
+        }
+        
+        .About__container p,
+        .About__container li {
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
+        
+        hr {
+            margin: 30px auto;
+            border: 1px solid #e7e7e7;
+        }
+        
+        @media screen and (min-width: 768px) {
+            .About__hero-image {
+                -webkit-flex-basis: 50%;
+                -ms-flex-preferred-size: 50%;
+                flex-basis: 50%;
+                max-width: 50%;
+                padding-right: 0rem;
+                margin-bottom: 0;
+            }
+            .About__description {
+                -webkit-flex-basis: 50%;
+                -ms-flex-preferred-size: 50%;
+                flex-basis: 50%;
+                max-width: 50%;
+            }
+        }
+        
+        .Page-footer {
+            background-color: #172f3a;
+            color: #fff;
+        }
+        
+        .Page-footer h4 {
+            color: #fff;
+            font-weight: bolder;
+            font-size: 24px;
+        }
+        
+        .Page-footer p {
+            color: #c7dae2;
+            line-height: 20px;
+        }
+        
+        .Page-footer a {
+            color: #89d3f5;
+        }
+
+    </style>
+</head>
+
+<body class='Background-Color'>
+
+    <div class='Page-content'>
+        {{#list_page}} {{#on_index}}
+        <div class="jumbo-1">
+            <div class="text">
+                <h1><a href="http://kalooba.ca">Kalooba</a></h1>
+                <p>Designed by <a href="http://loogart.com" target="_blank">Loogart</a>. Made in Canada.</p>
+            </div>
+            <img class="main" src="https://github.com/loogart/kalooba/blob/master/img/kalooba-2017.jpg?raw=true">
+        </div>
+        {{/on_index}} {{/list_page}}
+
+
+
+        <header class='Page-header'>
+            <div class='Container'>
+                <a href="{{store_url}}">
+                    <h1 class='Page-header__title'>
+                        {{#logotype}}
+                        <img class='Page-header__logotype Logotype-Size' src='{{url-1000}}' alt='{{store_name}}' /> {{/logotype}} {{#no_logotype}} {{store_name}} {{/no_logotype}}
+                    </h1>
+                </a>
+            </div>
+        </header>
+
+        <nav class='Page-navigation'>
+            <button type='button' class='Page-navigation__close'>
+          {{#lang}}Close navigation{{/lang}}
+        </button>
+            <div class='Container Page-navigation__container Background-Color'>
+                <ul class='Page-navigation__main Navigation-Font-Size Navigation-Color'>
+                    <li class="Page-navigation__item">
+                        <a href="{{store_url}}">{{#lang}}All{{/lang}}</a>
+                    </li>
+                    {{#navigation}}
+                    <li class='Page-navigation__item {{#is_current}}Page-navigation__item--selected{{/is_current}} {{#children}}{{#is_current}} Page-navigation__item--child-active{{/is_current}}{{/children}}'>
+                        <a href="{{url}}">{{label}}</a>
+                        <ul class='Page-navigation__sub'>
+                            {{#children}}
+                            <li class='Page-navigation__item {{#is_current}}Page-navigation__item--selected{{/is_current}}'>
+                                <a href="{{url}}" class="child">{{label}}</a>
+                            </li>
+                            {{/children}}
+                        </ul>
+                    </li>
+                    {{/navigation}} {{#store_blog_url}}
+                    <li class="Page-navigation__item">
+                        <a href="{{store_blog_url}}" target="_blank">{{#lang}}Blog{{/lang}}</a>
+                    </li>
+                    {{/store_blog_url}}
+
+                    <li class="Page-navigation__item {{#about_page}}Page-navigation__item--selected{{/about_page}}">
+                        <a href="{{store_url}}/about">{{#lang}}About{{/lang}}</a>
+                    </li>
+
+                    <li class="Page-navigation__item {{#b2b_page}}Page-navigation__item--selected{{/b2b_page}}">
+                        <a href="{{store_url}}/b2b">{{#lang}}B2B{{/lang}}</a>
+                    </li>
+
+                </ul>
+
+                <div class='Page-navigation__search'>
+                    <button type='button' class='Mobile-navigation__button Modal__trigger Mobile-navigation__search-trigger' data-modal='search'>{{#lang}}Search{{/lang}}</button>
+                </div>
+
+            </div>
+        </nav>
+
+        {{#navigation}} {{#is_current}}
+        <nav class="Page-sub-navigation">
+            <div class='Container'>
+                <ul class='Page-sub-navigation__list'>
+                    {{#children}}
+                    <li class='Page-sub-navigation__item {{#is_current}}Page-sub-navigation__item--selected{{/is_current}}'>
+                        <a href="{{url}}">
+                      {{label}}
+                    </a>
+                    </li>
+                    {{/children}}
+                </ul>
+            </div>
+        </nav>
+        {{/is_current}} {{/navigation}}
+
+        <nav class='Mobile-navigation Container'>
+            <ul class='Mobile-navigation__list'>
+                <li class='Mobile-navigation__item'>
+                    <button type='button' class='Mobile-navigation__button Mobile-navigation__navigation-trigger'>
+              <div class="Navigation-trigger">
+                <div class="Navigation-trigger__container">
+                  <div class="Navigation-trigger__element"></div>
+                </div>
+              </div>
+              <div>{{#lang}}Menu{{/lang}}</div>
+            </button>
+                </li>
+                <li class='Mobile-navigation__item'>
+                    <button type='button' class='Mobile-navigation__button Modal__trigger Mobile-navigation__search-trigger' data-modal='search'>
+              {{#lang}}Search{{/lang}}
+            </button>
+                </li>
+            </ul>
+        </nav>
+
+        {{#about_page}}
+        <section class='About Container Page-container'>
+            <div class='About__container'>
+                <!--{{#wallpaper}}
+                <div class='About__hero-image'>
+                    <div class='Masthead'>
+                      <div class='Masthead__spacer'></div>
+                      <div class='Masthead__image-wrapper'>
+                        <div class='Masthead__background' style='background-image: url("{{#wallpaper}}{{url-2000}}{{/wallpaper}}")'>
+                        </div>
+                        <img class='Masthead__image' src='{{#wallpaper}}{{url-2000}}{{/wallpaper}}'/>
+                      </div>
+                    </div>
+                </div>
+              {{/wallpaper}}-->
+                <div class='About__hero-image' style="float:left">
+                    <img src="https://raw.githubusercontent.com/loogart/kalooba/master/img/kalooba-loogart-mtl-tanktop.jpg" style="width:100%;margin-bottom:15px">
+                    <h2>What is Kalooba?</h2>
+
+                    <p>Kalooba sells exclusive designs by <a rel="nofollow" target="_blank" href="http://loogart.com">Loogart</a> on the highest quality apparel. The designs are inspired by the cityscapes of Canadian cities</p>
+
+
+                    <img src="https://raw.githubusercontent.com/loogart/kalooba/master/img/canada-male.png" style="width:100%;margin-bottom:15px">
+                </div>
+
+                <div class='About__description' style="float:left">
+                    <!--{{store_description}}-->
+
+                    <h2>Bold design.<br>Fun illustrations.</h2>
+                    <p>Canadian artist Loogart re-invented the cityscape of Montreal into playful, geometric and minimal illustrations that provide a fresh visual he named CityLines. With these fresh designs, Kalooba has partnered up with Loogart to produce a selection of their cityscape-themed illustrations on high-quality apparel and products.</p>
+
+
+
+                    <img src="https://raw.githubusercontent.com/loogart/kalooba/master/img/20161029-DSC_0212-2048.jpg" style="width:100%;margin-bottom:15px">
+
+
+                    <h2>Where can you buy Kalooba stuff?</h2>
+                    <p>You can find Kalooba online at Kalooba.ca. Moreover, Kalooba products can be purchased at the following points of sale (listed below).</p>
+                    <ul>
+                        <li>Montréal-Pierre Elliott Trudeau International Airport</li>
+                        <li>Ottawa MacDonald-Cartier International Airport</li>
+                        <li>Toronto Pearson International Airport</li>
+                        <li>Art Pop Montréal (129 Avenue du Mont-Royal E, Montréal, QC H2T 1N9)</li>
+                        <li>Blue Banana Market (250 Augusta Avenue, Toronto, ON)</li>
+                        <li>Spacing Store (401 Richmond St W, Toronto, ON)</li>
+                    </ul>
+                    <hr>
+                    <p><b>For wholesale opportunities or partnerships, please visit our <a rel="nofollow" href="{{store_url}}/b2b">{{#lang}}B2B section{{/lang}}.</a></b></p>
+
+                </div>
+            </div>
+        </section>
+        {{/about_page}} {{#b2b_page}}
+        <section class='About Container Page-container'>
+            <div class='About__container'>
+                <img src="https://raw.githubusercontent.com/loogart/kalooba/master/img/kalooba-b2b.jpg" style="width:100%;margin-bottom:15px">
+
+                <h2>Want to carry Kalooba in your store?</h2>
+                <p>Interested in selling Kalooba products in your store or business? If you are a Canadian clothing store, a tourism shop or a trendy boutique, we think you might be the pefect fit for us. Made in Montréal, Kalooba is the exclusive clothing and accessories distributor of <a href="http://loogart.com/projects/montreal-cityline-illustration" target="_blank">Loogart CityLine designs</a>.</p>
+                <p>For wholesale opportunities or partnerships, please <a rel="nofollow" target="_blank" href="mailto:chris@kalooba.ca">email us.</a></p>
+            </div>
+        </section>
+        {{/b2b_page}} {{#list_page}} {{#on_index}} {{#wallpaper}}
+        <div class='Container Container--no-space jumbo-inside'>
+            <div class='Masthead Page-container'>
+                <div class='Masthead__spacer'></div>
+                <div class='Masthead__image-wrapper'>
+                    <div class='Masthead__background' style='background-image: url("{{#wallpaper}}{{url-2000}}{{/wallpaper}}")'>
+                    </div>
+                    <img class='Masthead__image' src='{{#wallpaper}}{{url-2000}}{{/wallpaper}}' />
+                </div>
+            </div>
+        </div>
+        {{/wallpaper}} {{/on_index}}
+
+
+        <section class='Listing Container Page-container'>
+            <ul class='Item-list'>
+                {{#products}}
+                <li class='ProductCell'>
+                    <a href="{{url}}">
+                        <div class='ProductImage'>
+                            <div class='ProductImage__spacer Product-Image-Aspect-Ratio'></div>
+                            <div class='ProductImage__image-wrapper' style='background-image: url("{{#primary_image}}{{url-1000}}{{/primary_image}}")'>
+                                {{#primary_image}}
+                                <img class='ProductImage__image' src='{{url-1000}}' /> {{/primary_image}} {{^primary_image}}
+                                <div class='ProductImage__image--empty'></div>
+                                {{/primary_image}}
+                            </div>
+                        </div>
+                        <div class='ProductCell__details'>
+                            <h3 class='ProductCell__title'>{{title}}</h3>
+                            {{#in_stock}}
+                            <div class='ProductCell__price'>{{{price_tag}}}</div>
+                            {{/in_stock}} {{#out_of_stock}}
+                            <div class='ProductCell__price ProductCell__price--out-of-stock'>{{#lang}}Out of stock{{/lang}}</div>
+                            <p class='Product__price'></p>
+                            {{/out_of_stock}}
+                        </div>
+                    </a>
+                </li>
+                {{/products}}
+            </ul>
+        </section>
+        {{/list_page}} {{#product_page}}
+        <div class="Content-wrapper Page-container">
+            <div>
+                <div class="Content-wrapper__divider"></div>
+                <article class='Product Container'>
+                    {{#product}}
+                    <div class='Product__slider'>
+                        {{#primary_image}}
+                        <div class="slider js_slider Product__carousel">
+                            <div class="frame js_frame">
+                                <ul class="slides js_slides">
+                                    {{#all_images}}
+                                    <li class="js_slide">
+                                        <div class='ProductImage'>
+                                            <div class='ProductImage__spacer Product-Image-Aspect-Ratio'></div>
+                                            <div class='ProductImage__image-wrapper'>
+                                                <a class='Modal__trigger' data-modal='product'>
+                                                    <img class='ProductImage__image' src='{{url-1000}}' data-src='{{url-2000}}' />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {{/all_images}}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class='Product__slider-navigation'>
+                            <ul class='Product__slider-dots'></ul>
+                        </div>
+                        {{/primary_image}}
+                        <div class='Product__list'>
+                            {{#all_images}}
+                            <div class='ProductImage'>
+                                <div class='ProductImage__spacer Product-Image-Aspect-Ratio'></div>
+                                <div class='ProductImage__image-wrapper' style='background-image: url("{{url-1000}}")'>
+                                    <a class='Modal__trigger' data-modal='product'>
+                                        <img class='ProductImage__image' src='{{url-1000}}' data-src='{{url-2000}}' />
+                                    </a>
+                                </div>
+                            </div>
+                            {{/all_images}}
+                        </div>
+                    </div>
+                    <div class="Product__fixed-container">
+                        <div class='Product__details'>
+                            <div class='Product__container'>
+                                <div class='Product__footer'>
+                                    {{#add_to_cart}}
+                                    <div class="Product__variations">{{variations_select}}</div>
+                                    <div class="Product__add-to-cart Add-To-Cart-Button-Color">
+                                        {{#add_to_cart_button}} {{#lang}}Add to cart{{/lang}} {{/add_to_cart_button}}
+                                    </div>
+                                    {{/add_to_cart}}
+
+                                    <div id='product_info' class='Product__social Display-Social-Buttons-On-Product-Page'>
+                                        <div class='Social-items'>
+                                            <ul class='Social-items__list'>
+                                                <li class='Social-items__item Product__save-item'>
+                                                    <div class="Product__save">
+                                                        {{#save_button}}
+                                                        <span class="Product__unsaved-text">
+                                      {{#lang}}Save for later{{/lang}}
+                                  </span>
+                                                        <span class="Product__saved-text">
+                                      {{#lang}}Saved{{/lang}}
+                                  </span> {{/save_button}}
+                                                    </div>
+                                                </li>
+                                                <li class='Social-items__item Social-items__social-icons'>
+                                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{absolute_url}}" class='Social-items__icon Social-items__icon--facebook' target="_blank" rel="noopener" title='Share on Facebook'></a>
+                                                    <a href="http://pinterest.com/pin/create/button/?url={{absolute_url}}&media={{url-1000}}&description={{title}}" class='Social-items__icon Social-items__icon--pinterest' target="_blank" rel="noopener" title='Pin on Pinterest'></a>
+                                                    <a href="https://twitter.com/intent/tweet?url={{absolute_url}}&text={{title}}" class='Social-items__icon Social-items__icon--twitter' target="_blank" rel="noopener" title='Share on Twitter'></a>
+                                                </li>
+                                                <li class='Social-items__item'>
+                                                    <a href="https://tictail.com/embed/{{store_identifier}}/product/{{identifier}}#embed" class='Social-items__icon' target="_blank" rel="noopener" title='Embed product'>
+                                                        <span class='Social-items__label Social-items__label-icon Social-items__label-icon--embed'>{{#lang}}Embed{{/lang}}</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h2 class='Product__title'>{{title}}</h2>
+                                {{#in_stock}}
+                                <p class='Product__price'>{{{price_tag}}}</p>
+                                {{/in_stock}} {{#out_of_stock}}
+                                <p class='Product__price Product__price--out-of-stock'>{{#lang}}Out of stock{{/lang}}</p>
+                                {{/out_of_stock}}
+                                <div class='Product__description'>{{{description}}}</div>
+                                <ul class='Product__policies'>
+                                    <li>{{#return_policy}}{{#lang}}Return Policy{{/lang}}{{/return_policy}}</li>
+                                    <li>{{#terms}}{{#lang}}Terms &amp; Conditions{{/lang}}{{/terms}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{/product}}
+                </article>
+            </div>
+        </div>
+        {{#related_products?}}
+        <section class='Related-products'>
+            <div class='Container'>
+                <h2 class='Related-products__heading'>{{#lang}}Related products{{/lang}}</h2>
+                <ul class='Item-list'>
+                    {{#related_products}}
+                    <li class="ProductCell">
+                        <a href="{{url}}">
+                            <div class="ProductImage">
+                                <div class="ProductImage__spacer Product-Image-Aspect-Ratio"></div>
+                                <div class="ProductImage__image-wrapper" style='background-image: url("{{#primary_image}}{{url-1000}}{{/primary_image}}")'>
+                                    {{#primary_image}}
+                                    <img class='ProductImage__image' src='{{url-1000}}' /> {{/primary_image}} {{^primary_image}}
+                                    <div class='ProductImage__image--empty'></div>
+                                    {{/primary_image}}
+                                </div>
+                            </div>
+                            <div class="ProductCell__details">
+                                <h3 class="ProductCell__title">{{title}}</h3>
+                                <div class="ProductCell__price">{{{price_tag}}}</div>
+                            </div>
+                        </a>
+                    </li>
+                    {{/related_products}}
+                </ul>
+            </div>
+        </section>
+        {{/related_products?}} {{/product_page}} {{#instagram_recent_media}}
+        <footer class='Page-footer'>
+            {{{instagram_recent_media_default_block}}}
+        </footer>
+        {{/instagram_recent_media}}
+
+        <footer class='Page-footer'>
+            <div class='Container Page-footer__container'>
+                <div class='Page-footer__column'>
+                    {{#store_short_description}}
+                    <h4 class='Page-footer__heading'>{{#lang}}About{{/lang}}</h4>
+                    <p>
+                        {{{store_short_description}}}
+                    </p>
+                    {{/store_short_description}} {{^store_short_description}}
+                    <h4 class='Page-footer__heading'>{{store_name}}</h4>
+                    {{/store_short_description}}
+
+                    <ul class='Page-footer__footer-links'>
+                        <li class='Page-footer__footer-link'>{{#return_policy}}{{#lang}}Return Policy{{/lang}}{{/return_policy}}</li>
+                        <li class='Page-footer__footer-link'>{{#terms}}{{#lang}}Terms &amp; Conditions{{/lang}}{{/terms}}</li>
+                    </ul>
+                    {{#currency_converter}}
+                    <div class='Page-footer__currency-converter'>
+                        {{currency_converter}}
+                    </div>
+                    {{/currency_converter}}
+                </div>
+                <div class='Page-footer__column'>
+                    <h4 class='Page-footer__heading'>{{#lang}}Contact{{/lang}}</h4>
+                    <ul class='Page-footer__list'>
+                        {{#store_email}}
+                        <li><a href="mailto:{{store_email}}">{{#lang}}Email us{{/lang}}</a></li>
+                        {{/store_email}}
+                        <li><a href="https://www.facebook.com/iamkalooba/" rel="me">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/iamkalooba/" rel="me">Instagram</a></li>
+                        {{#twitter_username}}
+                        <li><a href="https://twitter.com/{{twitter_username}}" rel="me">Twitter</a></li>
+                        {{/twitter_username}}
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class='Modal'>
+        <button type='button' class='Modal__close'></button>
+        <div class='Modal__container Modal__container--image'></div>
+        <div class='Modal__container Modal__container--search'>
+            {{{search}}}
+        </div>
+        <div class='Modal__backdrop'></div>
+    </div>
+    <script type="text/javascript" src="https://app.ttcdn.co/theme_assets/sodermalm/jquery-3.1.1.min.js"></script>
+    <script src="https://app.ttcdn.co/theme_assets/sodermalm/main.js?2017-04-19T12:16:15.733Z"></script>
+</body>
+
+</html>
