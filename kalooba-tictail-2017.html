@@ -6,6 +6,15 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://app.ttcdn.co/theme_assets/sodermalm/main.css?2017-06-14T13:28:10.132Z" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/loogart/kalooba/master/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/loogart/kalooba/master/img/apple-icon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/loogart/kalooba/master/img/apple-icon.png" sizes="16x16">
+    <link rel="mask-icon" href="https://raw.githubusercontent.com/loogart/kalooba/master/img/apple-icon.png" color="#34a4dc">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/loogart/kalooba/master/img/apple-icon.png">
+    <meta name="theme-color" content="#34a4dc">
+
+
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/loogart/kalooba/master/img/apple-icon.png" />
     <title>
         {{store_name}} {{#list_page}}{{#navigation}}{{#is_current}}- {{label}}{{/is_current}}{{/navigation}}{{/list_page}} {{#product_page}}{{#product}}- {{title}}{{/product}}{{/product_page}} {{#about_page}}- {{#lang}}About{{/lang}}{{/about_page}} {{#b2b_page}}- {{#lang}}B2B{{/lang}}{{/b2b_page}}
@@ -317,6 +326,24 @@
         }
 
     </style>
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-104570594-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
 </head>
 
 <body class='Background-Color'>
@@ -460,15 +487,16 @@
                     <img src="https://raw.githubusercontent.com/loogart/kalooba/master/img/20161029-DSC_0212-2048.jpg" style="width:100%;margin-bottom:15px">
 
 
-                    <h2>Where can you buy Kalooba stuff?</h2>
-                    <p>You can find Kalooba online at Kalooba.ca. Moreover, Kalooba products can be purchased at the following points of sale (listed below).</p>
-                    <ul>
-                        <li>Montréal-Pierre Elliott Trudeau International Airport</li>
-                        <li>Ottawa MacDonald-Cartier International Airport</li>
-                        <li>Toronto Pearson International Airport</li>
-                        <li>Art Pop Montréal (129 Avenue du Mont-Royal E, Montréal, QC H2T 1N9)</li>
-                        <li>Blue Banana Market (250 Augusta Avenue, Toronto, ON)</li>
-                        <li>Spacing Store (401 Richmond St W, Toronto, ON)</li>
+                    <h2>Where can you buy Kalooba in a store?</h2>
+                    <p>Kalooba products can be purchased at the following points of sale:</p>
+                    <ul style="list-style-type: decimal;padding-left:20px;">
+                        <li>Olympic Park in Montréal</li>
+                        <li>Montréal YUL Airport</li>
+                        <li>Ottawa YOW Airport</li>
+                        <li>Toronto Pearson YYZ Airport</li>
+                        <li>Art Pop Montréal - 129 Avenue du Mont-Royal E, Montréal</li>
+                        <li>Blue Banana Market - 250 Augusta Avenue, Toronto</li>
+                        <li>Spacing Store - 401 Richmond St W, Toronto</li>
                     </ul>
                     <hr>
                     <p><b>For wholesale opportunities or partnerships, please visit our <a rel="nofollow" href="{{store_url}}/b2b">{{#lang}}B2B section{{/lang}}.</a></b></p>
